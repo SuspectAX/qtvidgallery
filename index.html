@@ -21,9 +21,16 @@
     </style>
 </head>
 <body>
-    <video autoplay muted="false" playsinline>
+    <video autoplay playsinline>
         <source src="video.mp4" type="video/mp4"> <!-- Your video file -->
         Your browser does not support the video tag.
     </video>
+    <script>
+        document.querySelector('video').muted = false; // Attempt to unmute the video
+        document.querySelector('video').play().catch(function(error) {
+            console.log('Playback failed: ', error);
+            alert('Click anywhere on the page to enable audio playback.'); // Alert user for interaction
+        });
+    </script>
 </body>
 </html>
