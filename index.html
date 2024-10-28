@@ -17,19 +17,25 @@
             width: auto; /* Keep the width automatic */
             height: 90vh; /* Set height for vertical view */
             border: none; /* No border */
+            cursor: pointer; /* Change cursor to indicate clickability */
         }
     </style>
 </head>
 <body>
-    <video autoplay playsinline>
+    <video id="myVideo">
         <source src="video.mp4" type="video/mp4"> <!-- Your video file -->
         Your browser does not support the video tag.
     </video>
     <script>
-        document.querySelector('video').muted = false; // Attempt to unmute the video
-        document.querySelector('video').play().catch(function(error) {
-            console.log('Playback failed: ', error);
-            alert('Click anywhere on the page to enable audio playback.'); // Alert user for interaction
+        const video = document.getElementById('myVideo');
+
+        // Function to play the video on click
+        video.addEventListener('click', function() {
+            if (video.paused) {
+                video.play(); // Play the video if it's paused
+            } else {
+                video.pause(); // Pause the video if it's already playing
+            }
         });
     </script>
 </body>
