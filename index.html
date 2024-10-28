@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QT Video Gallery</title>
+    <style>
+        body {
+            background-color: black; /* Set background to black */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+        }
+        video {
+            width: auto; /* Keep the width automatic */
+            height: 90vh; /* Set height for vertical view */
+            border: none; /* No border */
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted playsinline>
+        <source src="video.mp4" type="video/mp4"> <!-- Your video file -->
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>
